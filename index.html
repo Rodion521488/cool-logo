@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Logo - Дизайн логотипов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.7;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #fff9e6 0%, #ffffff 50%, #fff5cc 100%);
+            background-attachment: fixed;
+            letter-spacing: 0.02em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(255, 217, 0, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-size: 1.9rem;            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5a5a5a;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ffb800);
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffeaa7 0%, #ffd93d 50%, #fff 100%);
+            padding: 5.5rem 0 4.5rem;
+            text-align: center;            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #ffd700;
+            border-radius: 50%;
+            opacity: 0.25;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero::before { top: 15%; left: 8%; animation-delay: 0s; }
+        .hero::after { bottom: 15%; right: 8%; animation-delay: 2s; background: #ffb800; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            color: #2d3436;
+            letter-spacing: 0.4px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 2.2rem;
+            color: #555;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            color: #2d3436;
+            padding: 1rem 2.8rem;
+            border-radius: 50px;
+            font-size: 2.6rem;            font-weight: 800;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            transform: rotate(-1.5deg);
+            transition: transform 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .price-tag:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            color: #2d3436;
+            padding: 1.1rem 3.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.25rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            letter-spacing: 0.4px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 4.5rem 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3436;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+            border-radius: 28px;
+            margin: 0 20px;            padding: 4rem 2rem;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.08);
+            text-align: center;
+        }
+
+        .service-card-single {
+            display: inline-block;
+            background: linear-gradient(135deg, #fff9e6, #ffffff);
+            padding: 3rem;
+            border-radius: 24px;
+            max-width: 500px;
+            width: 100%;
+            transition: all 0.3s;
+            border: 3px solid #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+        }
+
+        .service-card-single:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.25);
+        }
+
+        .service-icon-solid {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-card-single h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2d3436;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card-single p {
+            color: #636e72;
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+            font-size: 1.1rem;
+        }
+
+        /* Advantages */
+        .advantages {
+            background: linear-gradient(135deg, #fff9e6, #ffffff);
+            border-radius: 28px;
+            margin: 0 20px;
+            padding: 4rem 2rem;
+        }
+        .advantages-list {
+            max-width: 750px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .advantages-list li {
+            padding: 1.3rem 1.8rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 16px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
+            letter-spacing: 0.2px;
+            line-height: 1.5;
+        }
+
+        .advantages-list li:before {
+            content: '✓';
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* Pricing */
+        .pricing-card {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 3.5rem;
+            border-radius: 28px;
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.15);
+            text-align: center;
+            border: 3px solid #ffd700;
+        }
+
+        .pricing-card h3 {            font-size: 2rem;
+            color: #2d3436;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+        }
+
+        .pricing-card .price {
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            margin: 1.5rem 0;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 2.5rem 0;
+        }
+
+        .pricing-card li {
+            padding: 1rem 0;
+            border-bottom: 2px solid #f8f9fa;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .pricing-card li:before {
+            content: '✓';
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .info-box {            background: linear-gradient(135deg, #ffeaa7, #ffd93d);
+            padding: 1.8rem;
+            border-radius: 18px;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3436;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #ffeaa7 0%, #ffd93d 100%);
+            text-align: center;
+            border-radius: 28px;
+            margin: 0 20px 4.5rem;
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            color: #2d3436;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #555;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .telegram-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #0088cc, #00a8e8);
+            color: white;
+            padding: 1.4rem 3.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-top: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+            letter-spacing: 0.4px;
+        }
+
+        .telegram-link:hover {
+            transform: translateY(-4px);            box-shadow: 0 12px 30px rgba(0, 136, 204, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        footer p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            letter-spacing: 0.2px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.15rem; }
+            .nav-links { display: none; }
+            .price-tag { font-size: 2.2rem; padding: 0.9rem 2.2rem; }
+            .services, .advantages, .contact { margin: 0; padding: 3rem 1.2rem; border-radius: 0; }
+            .pricing-card { padding: 2.5rem 1.5rem; }
+            h2 { font-size: 2rem; }
+            .service-card-single { padding: 2rem; }
+            .telegram-link { padding: 1.2rem 3rem; font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <!-- ЛОГОТИП ТЕПЕРЬ ВЕДЁТ НА ГЛАВНУЮ (#), А НЕ В ТЕЛЕГРАМ -->
+            <a href="#" class="logo">✦ Cool Logo</a>
+            <ul class="nav-links">
+                <li><a href="https://t.me/Mellowlll" target="_blank" rel="noopener noreferrer">Примеры</a></li>
+                <li><a href="https://t.me/Mellowlll" target="_blank" rel="noopener noreferrer">Услуги</a></li>
+                <li><a href="https://t.me/Mellowlll" target="_blank" rel="noopener noreferrer">Цена</a></li>
+                <li><a href="https://t.me/Mellowlll" target="_blank" rel="noopener noreferrer">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">            <h1>Сделаю крутые логотипы для вас</h1>
+            <p>Яркие, запоминающиеся и выделяющие вас среди других. Дизайн, который работает на ваш бизнес с первого взгляда.</p>
+            <div class="price-tag">299 ₽</div>
+            <br>
+            <a href="https://t.me/Mellowlll" class="cta-button" target="_blank" rel="noopener noreferrer">Обсудить проект</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Что я делаю</h2>
+            
+            <div class="service-card-single">
+                <svg class="service-icon-solid" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5 L63 38 L98 38 L70 59 L81 93 L50 73 L19 93 L30 59 L2 38 L37 38 Z" fill="#FFD700" stroke="#FFB800" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                <h3>Логотипы</h3>
+                <p>Разработаю уникальный логотип, который станет лицом вашего бренда. Качественно, стильно и дёшево.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages">
+        <div class="container">
+            <h2>Почему выбирают меня</h2>
+            <ul class="advantages-list">
+                <li>Качественные логотипы по честной цене — 299 ₽</li>
+                <li>Дизайн, который выделяет и запоминается</li>
+                <li>Бесплатные правки до полного утверждения</li>
+                <li>Быстрая работа — 2-3 дня</li>
+                <li>Все материалы и исходники в личных сообщениях</li>
+                <li>Индивидуальный подход к каждому проекту</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="price" class="container">
+        <h2>Стоимость</h2>
+        <div class="pricing-card">
+            <h3>Полный пакет</h3>
+            <div class="price">299 ₽</div>
+            <ul>
+                <li>Логотип в нескольких вариантах</li>
+                <li>Фирменная цветовая схема</li>
+                <li>Все исходники в форматах PNG, SVG</li>
+                <li>Бесплатные правки</li>                <li>Готовность за 2-3 дня</li>
+            </ul>
+            <div class="info-box">
+                ✦ Все файлы, референсы и итоговые материалы отправляю в личные сообщения после согласования
+            </div>
+            <br>
+            <a href="https://t.me/Mellowlll" class="cta-button" target="_blank" rel="noopener noreferrer">Заказать сейчас</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Готовы начать?</h2>
+            <p>Напишите мне в Telegram</p>
+            <p>Расскажите о вашем проекте, и я свяжусь с вами в ближайшее время</p>
+            <a href="https://t.me/Mellowlll" class="telegram-link" target="_blank" rel="noopener noreferrer">@Mellowlll</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Cool Logo. Все права защищены.</p>
+            <p style="margin-top: 0.6rem; opacity: 0.85; font-size: 0.95rem;">Создаю логотипы, которые нравятся ✦</p>
+        </div>
+    </footer>
+
+</body>
+</html>
